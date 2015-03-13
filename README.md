@@ -7,7 +7,25 @@ The implementation uses the shared regex patterns and overrides from regexes.yam
 Build:
 ------
 
-    cd ../java ; mvn install
+First download the sources for uap-core, uap-java and uap-pig into the same directory
+
+    mkdir ua-parser
+    git clone https://github.com/ua-parser/uap-core
+    git clone https://github.com/ua-parser/uap-java
+    git clone https://github.com/ua-parser/uap-pig
+
+Now build and install the java version:
+
+    cd uap-java
+    mvn install 
+
+NOTE: You may have to skip the testing in case there is a problem 
+
+    mvn install -DskipTests=true
+
+Now you can build the PIG udfs:
+
+    cd ../uap-pig
     mvn package
 
 Usage:
